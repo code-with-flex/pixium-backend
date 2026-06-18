@@ -25,6 +25,7 @@ The backend sits between the frontend and the blockchain. It serves the current 
 ### Prerequisites
 
 - Node.js 20+
+- pnpm
 - PostgreSQL
 - Redis
 - A running [indexer](https://github.com/Pixium-Org/indexer) to keep the DB in sync
@@ -32,7 +33,7 @@ The backend sits between the frontend and the blockchain. It serves the current 
 ### Install
 
 ```bash
-npm install
+pnpm install
 ```
 
 ### Environment
@@ -52,14 +53,14 @@ PORT=3000
 ### Run (Development)
 
 ```bash
-npm run start:dev
+pnpm run start:dev
 ```
 
 ### Run (Production)
 
 ```bash
-npm run build
-npm run start:prod
+pnpm run build
+pnpm run start:prod
 ```
 
 ---
@@ -123,28 +124,25 @@ ws://localhost:3000/canvas
 ## Project Structure
 
 ```
-backend/
-├── src/
-│   ├── canvas/         # Canvas module — read state from Redis
-│   ├── users/          # User stats and profiles
-│   ├── leaderboard/    # Leaderboard aggregation
-│   ├── quests/         # Quest definitions and status
-│   ├── factions/       # Faction management
-│   ├── websocket/      # Real-time event gateway
-│   └── app.module.ts
-├── .env.example
-└── package.json
+src/
+├── canvas/         # Canvas module — read state from Redis
+├── users/          # User stats and profiles
+├── leaderboard/    # Leaderboard aggregation
+├── quests/         # Quest definitions and status
+├── factions/       # Faction management
+├── websocket/      # Real-time event gateway
+└── app.module.ts
 ```
 
 ---
 
 ## Contributing
 
-See the root [contributing guide](#). Use ESLint + Prettier before submitting a PR.
+See the root [contributing guide](#). Run lint and format checks before submitting a PR.
 
 ```bash
-npm run lint
-npm run format
+pnpm run lint
+pnpm run format
 ```
 
 Branch format: `feature/<issue-number>-short-description`
